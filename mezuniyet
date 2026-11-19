@@ -1,0 +1,86 @@
+
+import random
+import datetime
+
+print("=" * 45)
+print("🌍 KAAN'IN İKLİM KORUYUCUSU 🌱")
+print("=" * 45)
+
+print("Merhaba! Ben doğayı korumak için buradayım.")
+print("Bana iklim ve çevre hakkında sorular sorabilirsin.")
+print("Çıkmak için 'çıkış' yaz.\n")
+
+cevaplar = {
+    "iklim değişikliği": [
+        "İklim değişikliği, Dünya'nın iklim düzeninin uzun süreli değişmesidir.",
+        "Fosil yakıt kullanımı ve ormansızlaşma iklim değişikliğini hızlandırır."
+    ],
+
+    "küresel ısınma": [
+        "Küresel ısınma, Dünya'nın ortalama sıcaklığının artmasıdır.",
+        "Sera gazları Dünya'nın ısınmasına neden olur."
+    ],
+
+    "ağaç": [
+        "Ağaçlar karbondioksiti emer ve oksijen üretir.",
+        "Ağaçları korumalı ve orman yangınlarını önlemeliyiz."
+    ],
+
+    "su": [
+        "Dişlerimizi fırçalarken musluğu kapatmalıyız.",
+        "Su kaynaklarını korumalı ve gereksiz su tüketmemeliyiz."
+    ],
+
+    "geri dönüşüm": [
+        "Kağıt, cam, metal ve plastikleri uygun geri dönüşüm kutularına atmalıyız.",
+        "Geri dönüşüm doğal kaynakların korunmasına yardımcı olur."
+    ],
+
+    "enerji": [
+        "Kullanmadığımız ışıkları kapatmalıyız.",
+        "Enerji tasarruflu cihazlar kullanmalıyız."
+    ],
+
+    "çözüm": [
+        "Toplu taşıma kullanabilir, enerji tasarrufu yapabiliriz.",
+        "Ağaçları korumak ve atıkları azaltmak iklim için önemlidir."
+    ],
+
+    "merhaba": [
+        "Merhaba! 🌱 Doğayı korumaya hazır mısın?",
+        "Selam! Bugün gezegenimiz için ne yapabiliriz?"
+    ],
+
+    "sen kimsin": [
+        "Ben Kaan'ın İklim Koruyucusu Botuyum! 🌍"
+    ],
+
+    "ne yapabilirim": [
+        "Su tasarrufu yapabilir, geri dönüşüme katılabilir ve enerji tüketimini azaltabilirsin."
+    ]
+}
+
+def cevap_ver(soru):
+    soru = soru.lower().strip()
+
+    if soru == "çıkış":
+        return "Doğayı koruduğun için teşekkürler! Görüşürüz! 🌍"
+
+    for anahtar, cevap_listesi in cevaplar.items():
+        if anahtar in soru:
+            return random.choice(cevap_listesi)
+
+    return (
+        "Bu konuda henüz yeterli bilgim yok. "
+        "Ama doğayı korumak için birlikte çalışabiliriz! 🌱"
+    )
+
+while True:
+    soru = input("\nSen: ")
+
+    cevap = cevap_ver(soru)
+
+    print("\nİklim Botu:", cevap)
+
+    if soru.lower().strip() == "çıkış":
+        break
